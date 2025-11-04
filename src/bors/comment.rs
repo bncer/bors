@@ -287,6 +287,12 @@ pub fn approve_blocking_labels_present(blocking_labels: &[&str]) -> Comment {
     ))
 }
 
+pub fn approve_merge_conflict_comment() -> Comment {
+    Comment::new(
+        ":clipboard: This PR cannot be approved until merge conflicts resolved".to_string(),
+    )
+}
+
 pub fn delegate_try_builds_comment(delegatee: &str, bot_prefix: &CommandPrefix) -> Comment {
     Comment::new(format!(
         r":v: @{delegatee}, you can now perform try builds on this pull request!
